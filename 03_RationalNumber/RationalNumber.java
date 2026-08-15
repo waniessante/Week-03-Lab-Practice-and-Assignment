@@ -33,7 +33,7 @@ public class RationalNumber {
         }
     }
 
-    // Euclidean algorithm to calculate greatest common divisor
+    // algorithm to calculate greatest common divisor
     private int findGCD(int a, int b) {
         while (b != 0) {
             int temp = b;
