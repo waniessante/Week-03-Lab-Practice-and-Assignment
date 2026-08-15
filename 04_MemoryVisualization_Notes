@@ -1,0 +1,16 @@
+# Stack and Heap Memory Breakdown: Point Addition
+
+When executing `Point p3 = p1.add(p2);`:
+
+1. **Stack Memory:**
+   - Holds reference variables `p1`, `p2`, and `p3`.
+   - When `p1.add(p2)` is called, a frame is pushed onto the stack storing `this` (reference to `p1`) and parameter `p` (reference to `p2`).
+
+2. **Heap Memory:**
+   - Holds the actual `Point` objects containing instance variables `x` and `y`.
+   - Inside `add()`, `new Point(...)` dynamically allocates space on the heap for a new `Point` object.
+   - The heap address of this newly created object is returned and assigned to `p3` on the stack.
+
+3. **Discussion Topics for Class:**
+   - Why pass objects by reference vs. creating deep copies in constructors?
+   - What happens to temporary objects created during chaining (e.g., `p1.add(p2).add(p3)`)? How does Java's Garbage Collector clean them up from the heap?
